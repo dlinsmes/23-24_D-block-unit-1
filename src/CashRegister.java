@@ -90,7 +90,7 @@ public class CashRegister {
 
         //start with the largest denomination
         //use int to store the quantity of each bill amount
-        int q = (int) amt/ 100;
+        int q = (int) amt / 100;
         System.out.println(q + " $100 bills");
 
         //calculate the remaining amount after counting $100 bills
@@ -114,7 +114,29 @@ public class CashRegister {
         amt = amt % 1;
         System.out.println("remaining is " + amt);
 
-        // try 157.98 as an initial amt and check the coin amts
+        // try 157.98 as an initial amt and check the coin quantities
+        // after calculating the bill amounts, print the remaining
+        //amounts to see if it's the value expected
+
+        //aim to get 98.0 remaining
+        amt *= 100; //97.99999
+        int cents = (int)(amt+0.5); //round up and cast as an int --> 98
+        System.out.println("cents: " + cents);
+
+        q = cents/25;
+        System.out.println(q + " quarters");
+        cents = cents % 25;
+
+        q = cents / 10;
+        System.out.println(q + " dimes");
+        cents = cents % 10;
+
+        q = cents / 5;
+        System.out.println(q + " nickles");
+        cents = cents % 5;
+
+        q = cents;
+        System.out.println(q + " pennies");
 
 
     }
